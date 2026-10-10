@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurelia Care — Premium Hospital Website Demo. An award-winning, conversion-optimized healthcare website demonstration showcasing specialist consultations, modern clinical facilities, and patient-first care.">
+  <meta name="theme-color" content="#0a1b2f">
+  <title>AURELIA CARE — Premium Hospital Website Demo</title>
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1b2f'/%3E%3Cpath d='M16 7v18M7 16h18' stroke='%2314b8a6' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Demo Disclosure Banner -->
+  <aside class="demo-banner" aria-label="Demo notice">
+    <div class="container demo-banner-inner">
+      <span class="demo-pill">Sales Demo Prototype</span>
+      <span>Fictional Hospital Website Demo — Designed for client presentations &amp; sales proposals.</span>
+      <button type="button" class="demo-banner-link" data-action="open-demo-info">Learn About This Demo &rarr;</button>
+    </div>
+  </aside>
+
+  <!-- Sticky Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand" aria-label="Aurelia Care Home">
+        <div class="brand-icon-box" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v16m-8-8h16"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">AURELIA<span>CARE</span></div>
+          <div class="brand-tagline">Speciality Hospital &amp; Research</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#specialities" class="nav-link">Specialities</a>
+        <a href="#doctors" class="nav-link">Doctors</a>
+        <a href="#facilities" class="nav-link">Facilities</a>
+        <a href="#patient-experience" class="nav-link">Patient Journey</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Emergency Hotline -->
+      <div class="nav-actions">
+        <a href="tel:+18005550199" class="nav-phone" title="Illustrative Emergency Hotline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>(800) 555-0199</span>
+        </a>
+        <a href="#booking" class="btn btn-primary btn-sm">Book Appointment</a>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="mobile-drawer-overlay" id="mobileOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand">
+        <div class="brand-icon-box" style="width:36px; height:36px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v16m-8-8h16"/></svg>
+        </div>
+        <div class="brand-name" style="font-size:1.15rem;">AURELIA<span>CARE</span></div>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobileClose" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <a href="#hero" class="mobile-drawer-link">Home <span>&rarr;</span></a>
+      <a href="#about" class="mobile-drawer-link">About Hospital <span>&rarr;</span></a>
+      <a href="#specialities" class="mobile-drawer-link">Medical Specialities <span>&rarr;</span></a>
+      <a href="#doctors" class="mobile-drawer-link">Our Doctors <span>&rarr;</span></a>
+      <a href="#facilities" class="mobile-drawer-link">Hospital Facilities <span>&rarr;</span></a>
+      <a href="#patient-experience" class="mobile-drawer-link">Patient Journey <span>&rarr;</span></a>
+      <a href="#faq" class="mobile-drawer-link">FAQ <span>&rarr;</span></a>
+      <a href="#contact" class="mobile-drawer-link">Contact &amp; Location <span>&rarr;</span></a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="#booking" class="btn btn-primary btn-block mobile-drawer-btn">Book Consultation</a>
+      <a href="tel:+18005550199" class="btn btn-outline btn-block mobile-drawer-btn">Call Emergency Desk</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- ========================================================================
+         HERO SECTION
+         ======================================================================== -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column Content -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="hero-badge-pulse" aria-hidden="true"></span>
+              <span>Patient-Centred Healthcare Excellence (Demo)</span>
+            </div>
+
+            <h1 id="hero-title" class="hero-headline">
+              Exceptional Care. <br>
+              <span class="text-accent">Closer to Home.</span>
+            </h1>
+
+            <p class="hero-description">
+              Experience world-class healthcare designed around human dignity, advanced precision medicine, and compassionate medical leaders. From rapid emergency response to dedicated outpatient wellness, our multidisciplinary team is here for you 24/7.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#booking" class="btn btn-primary btn-lg">
+                <span>Book an Appointment</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#specialities" class="btn btn-outline btn-lg">
+                <span>Explore Specialities</span>
+              </a>
+            </div>
+
+            <!-- Trust Row -->
+            <div class="hero-trust-row">
+              <div class="hero-trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>24/7 Emergency Care</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Board-Certified Faculty</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Same-Day Diagnostics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column Media -->
+          <div class="hero-media-wrapper">
+            <div class="hero-image-frame">
+              <img
+                src="images/hero-doctor.jpg"
+                alt="Compassionate doctor consulting with a patient in a bright, modern clinic"
+                class="hero-image"
+                width="600"
+                height="520"
+                onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80'"
+              >
+            </div>
+
+            <!-- Floating Top Emergency Card -->
+            <div class="hero-float-card hero-emergency-card" role="region" aria-label="Emergency desk">
+              <div class="emergency-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div>
+                <div class="emergency-title">Emergency Response</div>
+                <div class="emergency-phone">(800) 555-0199</div>
+                <div style="font-size:10px; color:var(--color-text-muted);">24/7 Trauma Bay Active</div>
+              </div>
+            </div>
+
+            <!-- Floating Quick Access Card -->
+            <div class="hero-float-card hero-quick-access-card" role="region" aria-label="Quick appointment access">
+              <div class="quick-access-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-teal-600);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Rapid Outpatient Desk</span>
+              </div>
+              <p class="quick-access-sub">Consultation slots open today across 8 core clinical departments.</p>
+              <a href="#booking" class="quick-access-link">Check Doctor Availability &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HOSPITAL STATISTICS & TRUST STRIP
+         ======================================================================== -->
+    <section class="stats-section" aria-label="Hospital figures">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">350<span>+</span></div>
+            <div class="stat-label">Senior Medical Specialists</div>
+            <div class="stat-sub">Board-Certified Faculty</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">42<span>+</span></div>
+            <div class="stat-label">Specialised Clinical Units</div>
+            <div class="stat-sub">Centers of Excellence</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">120<span>k+</span></div>
+            <div class="stat-label">Patient Consultations</div>
+            <div class="stat-sub">Illustrative Demo Count</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">28<span>+</span></div>
+            <div class="stat-label">Years of Clinical Legacy</div>
+            <div class="stat-sub">Demonstration History</div>
+          </div>
+        </div>
+        <p class="stats-disclaimer">*Illustrative figures presented for website design demonstration purposes.</p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SPECIALITIES SECTION
+         ======================================================================== -->
+    <section id="specialities" class="section section-muted" aria-labelledby="specialities-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Clinical Departments</span>
+          <h2 id="specialities-title" class="section-title">Comprehensive Medical Specialities</h2>
+          <p class="section-description">
+            From precision cardiovascular intervention to compassionate neonatal care, explore our eight specialized clinical departments equipped with cutting-edge medical technologies.
+          </p>
+        </div>
+
+        <div class="specialities-grid">
+          <!-- 1. Cardiology -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Cardiology &amp; Vascular</h3>
+            <p class="speciality-desc">Advanced cardiac catheterization, arrhythmia mapping, structural heart valve repairs, and preventive cardiovascular wellness programs.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 24/7 Primary Angioplasty</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> TAVR &amp; Valve Interventions</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Coronary ICU</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="cardiology">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 2. Orthopaedics -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Orthopaedics &amp; Joints</h3>
+            <p class="speciality-desc">Robotic total knee and hip replacements, computer-navigated spine surgeries, complex trauma fixations, and athletic sports medicine.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Robotic Arthroplasty</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Minimally Invasive Spine</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sports Injury Rehab Gym</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="orthopaedics">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 3. Neurology -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Neurology &amp; Spine</h3>
+            <p class="speciality-desc">Comprehensive stroke management, microscopic neuro-oncology, epilepsy monitoring, and micro-neurosurgical procedures.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Rapid Stroke Thrombolysis</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 3T Functional Neuro-MRI</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive Neuro ICU</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="neurology">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 4. Paediatrics -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Paediatrics &amp; Child Health</h3>
+            <p class="speciality-desc">Dedicated child-first environment covering tertiary Level-III neonatal care, child development, and adolescent health programs.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Level-III Neonatal ICU</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Child-Centred Play Suites</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Complete Immunization Clinic</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="paediatrics">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 5. Obstetrics & Gynaecology -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Obstetrics &amp; Gynaecology</h3>
+            <p class="speciality-desc">High-risk maternal-fetal medicine, private luxury birthing suites, fertility consulting, and keyhole laparoscopic surgery.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Luxury LDR Birthing Suites</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> High-Risk Maternal Fetal Unit</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Minimally Invasive Laparoscopy</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="obstetrics">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 6. General Medicine -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Internal &amp; General Medicine</h3>
+            <p class="speciality-desc">Holistic management of adult chronic diseases, diabetes control, executive preventive screenings, and multi-system care.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive Health Checks</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Diabetes &amp; Metabolic Care</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Geriatric Support Services</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="medicine">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 7. Dermatology -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+            <h3 class="speciality-title">Clinical Dermatology</h3>
+            <p class="speciality-desc">Evidence-based clinical skincare, autoimmune dermatopathology, early melanoma surveillance, and specialized laser therapy.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Digital Dermoscopy Mapping</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Narrowband Phototherapy</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dermatopathology Lab</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="dermatology">
+              Explore Department &rarr;
+            </button>
+          </article>
+
+          <!-- 8. Emergency Care -->
+          <article class="speciality-card">
+            <div class="speciality-icon-box" style="background:var(--color-rose-50); color:var(--color-rose-600);" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="speciality-title">24/7 Emergency &amp; Trauma</h3>
+            <p class="speciality-desc">Round-the-clock level-1 trauma resuscitation bay, rapid stroke code team, immediate ICU admission, and cardiac intervention.</p>
+            <div class="speciality-features">
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Zero-Delay Triage Bays</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> In-Wing CT Scanning</div>
+              <div class="speciality-feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Mobile ICU Fleets</div>
+            </div>
+            <button type="button" class="speciality-action" data-action="explore-speciality" data-speciality="emergency">
+              Explore Department &rarr;
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         DOCTORS DIRECTORY SECTION
+         ======================================================================== -->
+    <section id="doctors" class="section" aria-labelledby="doctors-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Clinical Leadership</span>
+          <h2 id="doctors-title" class="section-title">Distinguished Medical Faculty</h2>
+          <p class="section-description">
+            Meet our board-certified clinical department heads. Each brings decades of international clinical experience, peer-reviewed medical research, and unwavering dedication to patient safety.
+          </p>
+        </div>
+
+        <div class="doctors-grid">
+          <!-- Doctor 1: Dr. Marcus Vance -->
+          <article class="doctor-card">
+            <div class="doctor-image-wrapper">
+              <span class="doctor-demo-tag">Fictional Demo</span>
+              <img
+                src="images/doctor-marcus.jpg"
+                alt="Portrait of Dr. Marcus Vance, Chief of Cardiology"
+                class="doctor-image"
+                width="300"
+                height="280"
+                onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&h=750&q=80'"
+              >
+              <span class="doctor-dept-badge">Cardiology</span>
+            </div>
+            <div class="doctor-card-body">
+              <h3 class="doctor-name">Dr. Marcus Vance</h3>
+              <div class="doctor-qualifications">MD, FACC &bull; Harvard Medical</div>
+              <div class="doctor-experience">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>18+ Years Illustrative Exp.</span>
+              </div>
+              <div class="doctor-availability">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Mon, Wed, Fri &bull; Morning Slots</span>
+              </div>
+              <div class="doctor-card-actions">
+                <button type="button" class="btn btn-outline btn-sm" data-action="view-doctor" data-doctor="marcus">View Profile</button>
+                <button type="button" class="btn btn-primary btn-sm" data-action="book-doctor" data-doctor="marcus">Book Consult</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doctor 2: Dr. Elena Rostova -->
+          <article class="doctor-card">
+            <div class="doctor-image-wrapper">
+              <span class="doctor-demo-tag">Fictional Demo</span>
+              <img
+                src="images/doctor-elena.jpg"
+                alt="Portrait of Dr. Elena Rostova, Lead Neurosurgeon"
+                class="doctor-image"
+                width="300"
+                height="280"
+                onerror="this.src='https://images.unsplash.com/photo-1594824813501-48952b362089?auto=format&fit=crop&w=600&h=750&q=80'"
+              >
+              <span class="doctor-dept-badge">Neurosurgery</span>
+            </div>
+            <div class="doctor-card-body">
+              <h3 class="doctor-name">Dr. Elena Rostova</h3>
+              <div class="doctor-qualifications">MD, PhD &bull; Oxford &amp; Karolinska</div>
+              <div class="doctor-experience">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>15+ Years Illustrative Exp.</span>
+              </div>
+              <div class="doctor-availability">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Tue, Thu, Sat &bull; Full Day</span>
+              </div>
+              <div class="doctor-card-actions">
+                <button type="button" class="btn btn-outline btn-sm" data-action="view-doctor" data-doctor="elena">View Profile</button>
+                <button type="button" class="btn btn-primary btn-sm" data-action="book-doctor" data-doctor="elena">Book Consult</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doctor 3: Dr. Aris Thorne -->
+          <article class="doctor-card">
+            <div class="doctor-image-wrapper">
+              <span class="doctor-demo-tag">Fictional Demo</span>
+              <img
+                src="images/doctor-aris.jpg"
+                alt="Portrait of Dr. Aris Thorne, Director of Orthopaedics"
+                class="doctor-image"
+                width="300"
+                height="280"
+                onerror="this.src='https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&h=750&q=80'"
+              >
+              <span class="doctor-dept-badge">Orthopaedics</span>
+            </div>
+            <div class="doctor-card-body">
+              <h3 class="doctor-name">Dr. Aris Thorne</h3>
+              <div class="doctor-qualifications">MD, FRCS &bull; Cambridge &amp; Mayo</div>
+              <div class="doctor-experience">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>16+ Years Illustrative Exp.</span>
+              </div>
+              <div class="doctor-availability">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Mon, Tue, Thu &bull; Morning Slots</span>
+              </div>
+              <div class="doctor-card-actions">
+                <button type="button" class="btn btn-outline btn-sm" data-action="view-doctor" data-doctor="aris">View Profile</button>
+                <button type="button" class="btn btn-primary btn-sm" data-action="book-doctor" data-doctor="aris">Book Consult</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doctor 4: Dr. Sarah Jenkins -->
+          <article class="doctor-card">
+            <div class="doctor-image-wrapper">
+              <span class="doctor-demo-tag">Fictional Demo</span>
+              <img
+                src="images/doctor-sarah.jpg"
+                alt="Portrait of Dr. Sarah Jenkins, Head of Paediatrics"
+                class="doctor-image"
+                width="300"
+                height="280"
+                onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&h=750&q=80'"
+              >
+              <span class="doctor-dept-badge">Paediatrics</span>
+            </div>
+            <div class="doctor-card-body">
+              <h3 class="doctor-name">Dr. Sarah Jenkins</h3>
+              <div class="doctor-qualifications">MD, FAAP &bull; Stanford Medicine</div>
+              <div class="doctor-experience">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>12+ Years Illustrative Exp.</span>
+              </div>
+              <div class="doctor-availability">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Wed, Fri, Sat &bull; Afternoon Slots</span>
+              </div>
+              <div class="doctor-card-actions">
+                <button type="button" class="btn btn-outline btn-sm" data-action="view-doctor" data-doctor="sarah">View Profile</button>
+                <button type="button" class="btn btn-primary btn-sm" data-action="book-doctor" data-doctor="sarah">Book Consult</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         ABOUT THE HOSPITAL SECTION
+         ======================================================================== -->
+    <section id="about" class="section section-muted" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Media -->
+          <div class="about-media-wrapper">
+            <div class="about-image-frame">
+              <img
+                src="images/about-team.jpg"
+                alt="Multidisciplinary hospital medical team conferring together"
+                class="about-image"
+                width="500"
+                height="480"
+                onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80'"
+              >
+            </div>
+            <div class="about-badge-card">
+              <div class="about-badge-title">Patient-First Philosophy</div>
+              <div class="about-badge-desc">Individualized clinical pathways designed to maximize dignity, safety, and rapid recovery.</div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="about-content">
+            <span class="section-tag">About Aurelia Care</span>
+            <h2 id="about-title" class="section-title">Where Clinical Rigour Meets Empathetic Human Healing</h2>
+            <p class="about-lead">
+              Founded on the belief that healthcare should feel personal, reassuring, and uncompromisingly high in quality, Aurelia Care sets a new benchmark in private hospital care.
+            </p>
+            <p class="about-text">
+              We bring together world-renowned department heads, robotic surgical suites, and tranquil recovery spaces. Every patient treatment protocol is reviewed by multidisciplinary clinical boards to ensure complete clinical precision from initial diagnosis through rehabilitation.
+            </p>
+
+            <div class="about-pillars">
+              <div class="about-pillar-item">
+                <div class="pillar-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Multidisciplinary Review Boards</h3>
+                  <p class="pillar-desc">Complex cardiac, neurological, and surgical cases are reviewed collaboratively by senior specialists for unified care.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar-item">
+                <div class="pillar-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Rapid Door-to-Treatment Benchmarks</h3>
+                  <p class="pillar-desc">Streamlined intake pathways that virtually eliminate unnecessary waiting times for acute and scheduled consultations.</p>
+                </div>
+              </div>
+
+              <div class="about-pillar-item">
+                <div class="pillar-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Dignified Healing Environments</h3>
+                  <p class="pillar-desc">Private acoustic recovery suites, natural daylighting, HEPA air filtration, and dedicated patient concierge navigators.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+              <a href="#booking" class="btn btn-primary">Schedule Consultation</a>
+              <span style="font-size:12px; color:var(--color-text-muted);">*Fictional demo institution created for website sales presentation.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FACILITIES SECTION (EDITORIAL LAYOUT)
+         ======================================================================== -->
+    <section id="facilities" class="section" aria-labelledby="facilities-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Modern Infrastructure</span>
+          <h2 id="facilities-title" class="section-title">Designed for Precision &amp; Comfort</h2>
+          <p class="section-description">
+            Experience an editorial showcase of our advanced clinical equipment and serene recovery amenities designed to deliver the highest international standards of safety.
+          </p>
+        </div>
+
+        <div class="facilities-grid">
+          <!-- 1. Diagnostic Suite -->
+          <article class="facility-card">
+            <div class="facility-image-wrapper">
+              <span class="facility-tag">Precision Diagnostics</span>
+              <img
+                src="images/facility-diagnostics.jpg"
+                alt="3.0T Ultra-High Field MRI and diagnostic imaging suite"
+                class="facility-image"
+                width="400"
+                height="220"
+                onerror="this.src='https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&h=500&q=80'"
+              >
+            </div>
+            <div class="facility-content">
+              <h3 class="facility-title">3.0T Silent MRI &amp; 256-Slice CT</h3>
+              <p class="facility-desc">Next-generation non-invasive imaging delivering microscopic anatomic resolution with reduced scan times and acoustic noise suppression.</p>
+              <div class="facility-features">
+                <span class="facility-pill">Low-Dose Radiation</span>
+                <span class="facility-pill">Cardiac Motion Tracking</span>
+                <span class="facility-pill">Same-Day Digital Reporting</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Recovery Suites -->
+          <article class="facility-card">
+            <div class="facility-image-wrapper">
+              <span class="facility-tag">Inpatient Comfort</span>
+              <img
+                src="images/facility-suites.jpg"
+                alt="Deluxe private patient recovery suite with natural sunlight"
+                class="facility-image"
+                width="400"
+                height="220"
+                onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&h=500&q=80'"
+              >
+            </div>
+            <div class="facility-content">
+              <h3 class="facility-title">Deluxe Private Recovery Suites</h3>
+              <p class="facility-desc">Thoughtfully designed single-occupancy suites with acoustic wall dampening, customizable circadian lighting, and dedicated family lounges.</p>
+              <div class="facility-features">
+                <span class="facility-pill">HEPA Clean Air Flow</span>
+                <span class="facility-pill">24/7 Concierge Support</span>
+                <span class="facility-pill">En-suite Bathrooms</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Surgical Theatres -->
+          <article class="facility-card">
+            <div class="facility-image-wrapper">
+              <span class="facility-tag">Surgical Excellence</span>
+              <img
+                src="images/facility-surgery.jpg"
+                alt="Robotic-assisted sterile operating theatre with surgical robotic arms"
+                class="facility-image"
+                width="400"
+                height="220"
+                onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&h=500&q=80'"
+              >
+            </div>
+            <div class="facility-content">
+              <h3 class="facility-title">Robotic-Assisted Operating Theatres</h3>
+              <p class="facility-desc">Integrated laminar flow surgical suites equipped for computer-assisted neurosurgery and robotic joint arthroplasty with sub-millimeter accuracy.</p>
+              <div class="facility-features">
+                <span class="facility-pill">Da Vinci Surgical Platform</span>
+                <span class="facility-pill">Zero-Bacterial Air Filtration</span>
+                <span class="facility-pill">Live HD Telemetry</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Emergency Unit -->
+          <article class="facility-card">
+            <div class="facility-image-wrapper">
+              <span class="facility-tag">Critical Intervention</span>
+              <img
+                src="images/facility-emergency.jpg"
+                alt="Level-1 Trauma and 24-hour Emergency Resuscitation Centre"
+                class="facility-image"
+                width="400"
+                height="220"
+                onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&h=500&q=80'"
+              >
+            </div>
+            <div class="facility-content">
+              <h3 class="facility-title">Level-1 Trauma &amp; Emergency Wing</h3>
+              <p class="facility-desc">A specialized emergency facility built for immediate stroke resuscitation, cardiac code management, and rapid multi-trauma stabilization.</p>
+              <div class="facility-features">
+                <span class="facility-pill">Dedicated Trauma Bays</span>
+                <span class="facility-pill">Instant Blood Bank Access</span>
+                <span class="facility-pill">Fast-Track Pediatric Bay</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Clinical Laboratory -->
+          <article class="facility-card">
+            <div class="facility-image-wrapper">
+              <span class="facility-tag">Diagnostic Pathology</span>
+              <img
+                src="images/facility-laboratory.jpg"
+                alt="Automated 24-hour clinical pathology laboratory with precision analyzers"
+                class="facility-image"
+                width="400"
+                height="220"
+                onerror="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&h=500&q=80'"
+              >
+            </div>
+            <div class="facility-content">
+              <h3 class="facility-title">Automated Pathology &amp; Molecular Lab</h3>
+              <p class="facility-desc">Robotic barcode-tracked sample processing ensuring error-free haematology, biochemistry, infectious disease panels, and molecular testing.</p>
+              <div class="facility-features">
+                <span class="facility-pill">60-Min Stat Turnaround</span>
+                <span class="facility-pill">Barcoded Patient ID</span>
+                <span class="facility-pill">Secure Digital Portal Sync</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Pharmacy -->
+          <article class="facility-card">
+            <div class="facility-image-wrapper">
+              <span class="facility-tag">Medication Management</span>
+              <img
+                src="images/facility-pharmacy.jpg"
+                alt="24-hour in-house hospital pharmacy and computerized dispensing unit"
+                class="facility-image"
+                width="400"
+                height="220"
+                onerror="this.src='https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=800&h=500&q=80'"
+              >
+            </div>
+            <div class="facility-content">
+              <h3 class="facility-title">24/7 In-House Clinical Pharmacy</h3>
+              <p class="facility-desc">Computerized prescription cross-checking to prevent drug interactions, stocking specialized biologics, emergency therapeutics, and home deliveries.</p>
+              <div class="facility-features">
+                <span class="facility-pill">Pharmacist Consultation Desk</span>
+                <span class="facility-pill">Cold-Chain Storage Units</span>
+                <span class="facility-pill">Digital Refill Reminders</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PATIENT JOURNEY & TESTIMONIALS SECTION
+         ======================================================================== -->
+    <section id="patient-experience" class="section section-muted" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Seamless Care Model</span>
+          <h2 id="journey-title" class="section-title">The Aurelia Patient Experience</h2>
+          <p class="section-description">
+            We reimagined every step of the patient journey to eliminate waiting room anxieties, maintain complete communication clarity, and accelerate healing.
+          </p>
+        </div>
+
+        <!-- 4-Step Patient Journey Stepper -->
+        <div class="journey-timeline">
+          <div class="journey-step-card">
+            <div class="step-number-badge">01</div>
+            <h3 class="step-title">Fast-Track Digital Intake</h3>
+            <p class="step-desc">Book appointments online, pre-fill your medical history securely, and receive priority check-in arrival instructions.</p>
+          </div>
+
+          <div class="journey-step-card">
+            <div class="step-number-badge">02</div>
+            <h3 class="step-title">Dedicated Specialist Consult</h3>
+            <p class="step-desc">Consult with board-certified clinical leads who spend meaningful, unhurried time reviewing your diagnosis and questions.</p>
+          </div>
+
+          <div class="journey-step-card">
+            <div class="step-number-badge">03</div>
+            <h3 class="step-title">Same-Day Precision Diagnostics</h3>
+            <p class="step-desc">Complete lab panels and diagnostic imaging on-site with rapid digital delivery to your doctor’s screen in hours.</p>
+          </div>
+
+          <div class="journey-step-card">
+            <div class="step-number-badge">04</div>
+            <h3 class="step-title">Tailored Recovery &amp; Follow-up</h3>
+            <p class="step-desc">Receive a clear personal care blueprint, personalized nutritional guidance, and ongoing telehealth check-in support.</p>
+          </div>
+        </div>
+
+        <!-- Fictional Demo Testimonials -->
+        <div class="section-header" style="margin-top:var(--space-16); margin-bottom:var(--space-8);">
+          <span class="section-tag">Patient Perspectives</span>
+          <h3 class="section-title" style="font-size:1.85rem;">Illustrative Patient Stories (Demo)</h3>
+          <p class="section-description">
+            Sample testimonials demonstrating how social proof and authentic patient feedback can be displayed on a prospective hospital’s commercial website.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card">
+            <span class="testimonial-demo-badge">Fictional Demo Story</span>
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <blockquote class="testimonial-quote">
+              &ldquo;The cardiac team under Dr. Vance acted with astonishing swiftness and quiet composure. From the instant I arrived through my catheterization procedure, every doctor and nurse treated my family with gentle reassurance.&rdquo;
+            </blockquote>
+            <div class="testimonial-author">
+              <img
+                src="images/patient-1.jpg"
+                alt="Portrait of fictional patient Arthur"
+                class="testimonial-avatar"
+                width="44"
+                height="44"
+                onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80'"
+              >
+              <div>
+                <div class="author-name">Arthur Montgomery</div>
+                <div class="author-treatment">Interventional Cardiology Patient (Demo)</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card">
+            <span class="testimonial-demo-badge">Fictional Demo Story</span>
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <blockquote class="testimonial-quote">
+              &ldquo;Undergoing robotic knee replacement was daunting, but Dr. Thorne walked me through the 3D surgical plan beforehand. Walking comfortably again after six weeks was beyond my highest expectations.&rdquo;
+            </blockquote>
+            <div class="testimonial-author">
+              <img
+                src="images/patient-2.jpg"
+                alt="Portrait of fictional patient Jonathan"
+                class="testimonial-avatar"
+                width="44"
+                height="44"
+                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'"
+              >
+              <div>
+                <div class="author-name">Jonathan Hayes</div>
+                <div class="author-treatment">Robotic Knee Arthroplasty (Demo)</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card">
+            <span class="testimonial-demo-badge">Fictional Demo Story</span>
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+            <blockquote class="testimonial-quote">
+              &ldquo;Dr. Sarah Jenkins and the paediatric nursing wing made what could have been a terrifying emergency for our seven-year-old daughter into a calm, gentle, and child-centred recovery experience.&rdquo;
+            </blockquote>
+            <div class="testimonial-author">
+              <img
+                src="images/patient-3.jpg"
+                alt="Portrait of fictional parent Clara"
+                class="testimonial-avatar"
+                width="44"
+                height="44"
+                onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80'"
+              >
+              <div>
+                <div class="author-name">Clara Davenport</div>
+                <div class="author-treatment">Parent of Paediatric Patient (Demo)</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         APPOINTMENT BOOKING SECTION
+         ======================================================================== -->
+    <section id="booking" class="section booking-section" aria-labelledby="booking-title">
+      <div class="container">
+        <div class="booking-grid">
+          <!-- Left Guidance Panel -->
+          <div class="booking-info-panel">
+            <span class="section-tag" style="background:rgba(13,148,136,0.2); color:var(--color-teal-400); border-color:rgba(45,212,191,0.3);">Priority Scheduling</span>
+            <h2 id="booking-title" class="booking-info-title">Schedule Your Specialist Consultation</h2>
+            <p class="booking-info-desc">
+              Book a confirmed consultation with our senior medical faculty. Our outpatient coordinator team will assist you with intake and insurance verification.
+            </p>
+
+            <div class="booking-checklist">
+              <div class="checklist-item">
+                <div class="checklist-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong style="color:#ffffff;">Direct Specialist Allocation:</strong> Consult directly with the lead practitioner in your medical speciality.
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong style="color:#ffffff;">Flexible Consultation Modes:</strong> Choose between an in-person hospital visit or an encrypted telehealth session.
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <div class="checklist-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong style="color:#ffffff;">Fast-Track Check-In:</strong> Digital intake ensures you spend minimal time in registration lounges.
+                </div>
+              </div>
+            </div>
+
+            <!-- Urgent Call Box -->
+            <div class="booking-helpline-box">
+              <div class="helpline-icon-box" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="helpline-sub">Need Same-Day Emergency Care?</div>
+                <div class="helpline-number">(800) 555-0199</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Interactive Form Card -->
+          <div class="booking-form-card">
+            <div class="form-header">
+              <h3 class="form-header-title">Patient Appointment Enquiry</h3>
+              <p class="form-header-sub">Please complete the details below to test the interactive appointment system.</p>
+            </div>
+
+            <form id="appointmentForm" novalidate>
+              <!-- Consultation Mode Selector -->
+              <div class="form-group">
+                <label class="form-label">Consultation Format</label>
+                <div class="mode-selector">
+                  <label class="mode-option">
+                    <input type="radio" name="consultationMode" value="In-Hospital Clinic Visit" checked>
+                    <div class="mode-card">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                      <span>In-Hospital Visit</span>
+                    </div>
+                  </label>
+                  <label class="mode-option">
+                    <input type="radio" name="consultationMode" value="Virtual Telehealth Consultation">
+                    <div class="mode-card">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                      <span>Telehealth Video</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <!-- Patient Name -->
+                <div class="form-group">
+                  <label for="patientName" class="form-label">
+                    <span>Full Name</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="patientName" name="patientName" class="form-control" placeholder="e.g. Eleanor Vance" required autocomplete="name">
+                  <div class="form-error-msg">Please enter a valid patient name (at least 2 characters).</div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <label for="patientPhone" class="form-label">
+                    <span>Phone Number</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <input type="tel" id="patientPhone" name="patientPhone" class="form-control" placeholder="e.g. +1 (555) 019-2834" required autocomplete="tel">
+                  <div class="form-error-msg">Please provide a valid phone contact number.</div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group col-span-2">
+                  <label for="patientEmail" class="form-label">
+                    <span>Email Address</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <input type="email" id="patientEmail" name="patientEmail" class="form-control" placeholder="e.g. eleanor.vance@example.com" required autocomplete="email">
+                  <div class="form-error-msg">Please provide a valid email address for confirmation notices.</div>
+                </div>
+
+                <!-- Speciality Select -->
+                <div class="form-group">
+                  <label for="bookingSpeciality" class="form-label">
+                    <span>Medical Speciality</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="bookingSpeciality" name="bookingSpeciality" class="form-control" required>
+                    <option value="">Select Speciality...</option>
+                    <option value="cardiology">Cardiology &amp; Vascular</option>
+                    <option value="orthopaedics">Orthopaedics &amp; Joint Surgery</option>
+                    <option value="neurology">Neurology &amp; Spine Surgery</option>
+                    <option value="paediatrics">Paediatrics &amp; Child Health</option>
+                    <option value="obstetrics">Obstetrics &amp; Gynaecology</option>
+                    <option value="medicine">Internal &amp; General Medicine</option>
+                    <option value="dermatology">Clinical Dermatology</option>
+                    <option value="emergency">Emergency &amp; Critical Care</option>
+                  </select>
+                  <div class="form-error-msg">Please choose a medical speciality.</div>
+                </div>
+
+                <!-- Doctor Select -->
+                <div class="form-group">
+                  <label for="bookingDoctor" class="form-label">
+                    <span>Preferred Doctor</span>
+                  </label>
+                  <select id="bookingDoctor" name="bookingDoctor" class="form-control">
+                    <option value="">Any Available Senior Specialist</option>
+                    <option value="marcus">Dr. Marcus Vance, MD (Cardiology)</option>
+                    <option value="elena">Dr. Elena Rostova, MD, PhD (Neurosurgery)</option>
+                    <option value="aris">Dr. Aris Thorne, MD, FRCS (Orthopaedics)</option>
+                    <option value="sarah">Dr. Sarah Jenkins, MD (Paediatrics)</option>
+                  </select>
+                </div>
+
+                <!-- Preferred Date -->
+                <div class="form-group">
+                  <label for="preferredDate" class="form-label">
+                    <span>Preferred Date</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <input type="date" id="preferredDate" name="preferredDate" class="form-control" required>
+                  <div class="form-error-msg">Please select an upcoming appointment date.</div>
+                </div>
+
+                <!-- Preferred Time Slot -->
+                <div class="form-group">
+                  <label for="preferredTime" class="form-label">
+                    <span>Preferred Time Slot</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="preferredTime" name="preferredTime" class="form-control" required>
+                    <option value="">Select Time Window...</option>
+                    <option value="morning_1">Morning &bull; 09:00 AM - 10:30 AM</option>
+                    <option value="morning_2">Morning &bull; 10:45 AM - 12:15 PM</option>
+                    <option value="afternoon_1">Afternoon &bull; 02:00 PM - 03:30 PM</option>
+                    <option value="afternoon_2">Afternoon &bull; 03:45 PM - 05:00 PM</option>
+                    <option value="evening">Evening &bull; 05:30 PM - 07:00 PM</option>
+                  </select>
+                  <div class="form-error-msg">Please select a preferred consultation time window.</div>
+                </div>
+
+                <!-- Optional Medical Notes -->
+                <div class="form-group col-span-2">
+                  <label for="patientNotes" class="form-label">
+                    <span>Brief Symptoms or Medical Notes (Optional)</span>
+                  </label>
+                  <textarea id="patientNotes" name="patientNotes" class="form-control" rows="3" placeholder="Please describe any current symptoms, recent test history, or specific questions for the physician..."></textarea>
+                </div>
+
+                <!-- Consent Checkbox -->
+                <div class="form-group col-span-2">
+                  <label class="form-checkbox-label">
+                    <input type="checkbox" id="consentDemo" class="form-checkbox" required>
+                    <span>I understand this is a sales demonstration website. Submitting this form tests frontend validation and will not transmit real patient information or book a real appointment.</span>
+                  </label>
+                  <div class="form-error-msg">You must confirm agreement with the demo testing terms.</div>
+                </div>
+              </div>
+
+              <div class="form-disclaimer-note">
+                <strong>Confidentiality Notice:</strong> In this frontend demo, patient inputs are validated directly in your browser. No sensitive medical data is saved or transmitted.
+              </div>
+
+              <div style="margin-top:var(--space-6);">
+                <button type="submit" id="bookingSubmitBtn" class="btn btn-primary btn-block btn-lg">
+                  <span>Confirm Appointment Enquiry</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION)
+         ======================================================================== -->
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Patient Inquiries</span>
+          <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+          <p class="section-description">
+            Clear, transparent answers regarding appointment protocols, visiting regulations, insurance processing, and medical records.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-list">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span>How quickly can I schedule a consultation with a senior specialist?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer-panel">
+                <div class="faq-answer-content">
+                  Most outpatient specialist appointments can be accommodated within 24 to 48 hours. Urgent cardiac, trauma, or neurological assessments are triaged immediately upon arrival through our 24/7 Emergency &amp; Trauma Centre without requiring advance appointment bookings.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span>Which health insurance plans and cashless policies are supported?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer-panel">
+                <div class="faq-answer-content">
+                  In a production hospital deployment, Aurelia Care coordinates with major private insurers, Third Party Administrators (TPAs), and corporate healthcare panels to provide direct cashless billing. Our Patient Concierge Desk assists with pre-authorization paperwork prior to planned procedures.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span>What are the visiting hours for private inpatient rooms and intensive care?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer-panel">
+                <div class="faq-answer-content">
+                  For private inpatient suites, visiting hours are 10:00 AM to 01:00 PM and 04:30 PM to 08:00 PM daily. One designated family attendant is permitted 24/7 in private rooms. To safeguard clinical sterility, Intensive Care Unit (ICU) visits are scheduled in 30-minute intervals twice daily.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span>How do patients access diagnostic imaging and pathology reports?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer-panel">
+                <div class="faq-answer-content">
+                  Diagnostic results, lab panels, and DICOM imaging files are synchronized to our secure Patient Digital Portal within hours of testing. Printed copies and medical CD-ROM packages are also available at the Diagnostic Records Lounge on Ground Floor Level 1.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span>What documentation should I bring to my first hospital consultation?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer-panel">
+                <div class="faq-answer-content">
+                  Please bring a government-issued photo ID, your insurance membership card, a list of current prescription medications, and copies of any relevant medical records, previous surgeries, or recent imaging scans from the past 12 months.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span>Where is the hospital located and what parking facilities are available?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer-panel">
+                <div class="faq-answer-content">
+                  Our main campus is situated at 1400 Grandview Boulevard in Metro Health District (Demo Location). We offer complimentary patient valet parking at Gate 2, as well as a 500-vehicle covered multi-level parking garage with EV charging and wheelchair-accessible elevator bays.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT & LOCATION SECTION
+         ======================================================================== -->
+    <section id="contact" class="section section-muted" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Campus &amp; Access</span>
+          <h2 id="contact-title" class="section-title">Hospital Location &amp; Inquiries</h2>
+          <p class="section-description">
+            Centrally located with convenient rapid-transit access, direct emergency ambulance bays, and 24-hour outpatient support.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Details Card -->
+          <div class="contact-info-card">
+            <h3 style="font-size:1.35rem; font-weight:800; color:var(--color-navy-950); margin-bottom:20px;">Main Hospital Campus</h3>
+
+            <div class="contact-details-list">
+              <!-- Address -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="contact-detail-title">Campus Address (Fictional Demo)</div>
+                  <div class="contact-detail-value">
+                    1400 Grandview Boulevard, Suite 500<br>
+                    Metro Health District, CA 90210
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-detail-title">Phone Helplines</div>
+                  <div class="contact-detail-value">
+                    Appointments: (800) 555-0190<br>
+                    24/7 Emergency Line: (800) 555-0199
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="contact-detail-row">
+                <div class="contact-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="contact-detail-title">Electronic Correspondence</div>
+                  <div class="contact-detail-value">
+                    concierge@aureliacare-demo.com<br>
+                    admissions@aureliacare-demo.com
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Operating Hours Table -->
+            <div style="border-top:1px solid var(--color-border-subtle); padding-top:16px;">
+              <h4 style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-navy-950); margin-bottom:8px;">Campus Operating Hours</h4>
+              <table class="hours-table">
+                <tbody>
+                  <tr>
+                    <td>Level-1 Emergency &amp; Trauma</td>
+                    <td>24 Hours &bull; 7 Days a Week</td>
+                  </tr>
+                  <tr>
+                    <td>Specialist Outpatient Clinics</td>
+                    <td>Mon &ndash; Sat &bull; 08:00 AM &ndash; 08:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Diagnostic Labs &amp; Imaging</td>
+                    <td>24/7 Priority Inpatient / Outpatient</td>
+                  </tr>
+                  <tr>
+                    <td>Hospital Pharmacy</td>
+                    <td>24 Hours Continuous Dispensing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right Interactive Location Visual Card -->
+          <div class="contact-map-card">
+            <div class="map-visual-placeholder">
+              <div class="map-pin-box">
+                <div style="width:10px; height:10px; background:var(--color-teal-500); border-radius:50%; margin:0 auto 6px; box-shadow:0 0 10px var(--color-teal-500);"></div>
+                <div class="map-pin-title">Aurelia Care Medical Campus</div>
+                <div class="map-pin-coords">37.7749&deg; N, 122.4194&deg; W</div>
+                <div style="font-size:11px; color:var(--color-teal-700); font-weight:700; margin-top:4px;">Main Entrance &bull; Gate 2 Valet</div>
+              </div>
+            </div>
+
+            <div class="map-card-footer">
+              <div class="map-transit-info">
+                <strong>Public Transit:</strong> Metro Line 4 &bull; Health Center Station (Exit B)<br>
+                <strong>Parking:</strong> Covered multi-level patient garage with EV chargers
+              </div>
+              <button type="button" class="btn btn-outline-white btn-sm" id="getDirectionsBtn">
+                <span>Get Directions (Demo)</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Mission -->
+        <div class="footer-col-brand">
+          <a href="#hero" class="brand" aria-label="Aurelia Care Home">
+            <div class="brand-icon-box" style="background:var(--color-teal-600);" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v16m-8-8h16"/></svg>
+            </div>
+            <div class="brand-text">
+              <div class="brand-name">AURELIA<span>CARE</span></div>
+              <div class="brand-tagline" style="color:#94a3b8;">Speciality Hospital &amp; Research</div>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Aurelia Care is an interactive commercial hospital website demo designed to demonstrate modern healthcare web architecture, patient conversion design, and accessible frontend engineering.
+          </p>
+          <div class="footer-disclaimer-card">
+            <strong>Demonstration Notice:</strong> All hospital names, doctors, statistics, and patient testimonials on this website are fictional demo assets built for client presentation.
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <h4 class="footer-heading">Hospital Navigation</h4>
+          <div class="footer-links">
+            <a href="#hero" class="footer-link">Home Campus</a>
+            <a href="#about" class="footer-link">About Aurelia Care</a>
+            <a href="#specialities" class="footer-link">Speciality Departments</a>
+            <a href="#doctors" class="footer-link">Medical Faculty</a>
+            <a href="#facilities" class="footer-link">Facilities &amp; Tech</a>
+            <a href="#patient-experience" class="footer-link">Patient Experience</a>
+            <a href="#booking" class="footer-link">Appointment Booking</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Specialities -->
+        <div>
+          <h4 class="footer-heading">Clinical Excellence</h4>
+          <div class="footer-links">
+            <a href="#specialities" class="footer-link">Cardiology &amp; Vascular</a>
+            <a href="#specialities" class="footer-link">Orthopaedics &amp; Joint Surgery</a>
+            <a href="#specialities" class="footer-link">Neurology &amp; Spine Care</a>
+            <a href="#specialities" class="footer-link">Paediatrics &amp; Adolescent Health</a>
+            <a href="#specialities" class="footer-link">Obstetrics &amp; Gynaecology</a>
+            <a href="#specialities" class="footer-link">Clinical Dermatology</a>
+            <a href="#specialities" class="footer-link">24/7 Trauma Emergency</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Demo Info -->
+        <div>
+          <h4 class="footer-heading">Emergency &amp; Inquiries</h4>
+          <div class="footer-links" style="margin-bottom:16px;">
+            <span style="font-size:12px; color:#cbd5e1;">24/7 Emergency Line:</span>
+            <strong style="color:var(--color-teal-400); font-size:1.1rem;">(800) 555-0199</strong>
+            <span style="font-size:12px; color:#94a3b8;">Campus Concierge Desk:</span>
+            <span style="font-size:12px; color:#cbd5e1;">(800) 555-0190</span>
+            <span style="font-size:12px; color:#94a3b8;">Email:</span>
+            <span style="font-size:12px; color:#cbd5e1;">concierge@aureliacare-demo.com</span>
+          </div>
+          <button type="button" class="btn btn-outline-white btn-sm btn-block" data-action="open-demo-info">
+            View Sales Demo Details
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Aurelia Care Healthcare System. Prototype Demo Website. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-link" onclick="event.preventDefault(); alert('Demo Notice: Privacy Policy terms would be hosted here on a production hospital deployment.');">Privacy Notice</a>
+          <a href="#" class="footer-link" onclick="event.preventDefault(); alert('Demo Notice: Standard Hospital Terms of Care would be linked here.');">Terms of Service</a>
+          <a href="#" class="footer-link" onclick="event.preventDefault(); alert('Demo Notice: Patient Rights & Non-Discrimination Disclosures would appear here.');">Patient Rights</a>
+          <a href="admin.html" class="footer-link" style="color:var(--color-teal-400); font-weight:700;">Staff Portal &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODALS & FLOATING CONTROLS
+       ======================================================================== -->
+
+  <!-- 1. Doctor Profile Modal -->
+  <div class="modal-backdrop" id="doctorModal" role="dialog" aria-modal="true" aria-labelledby="doctorModalTitle">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" aria-label="Close Doctor Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div id="doctorModalBody"></div>
+    </div>
+  </div>
+
+  <!-- 2. Speciality Detail Modal -->
+  <div class="modal-backdrop" id="specialityModal" role="dialog" aria-modal="true" aria-labelledby="specialityModalTitle">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" aria-label="Close Speciality Details">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div id="specialityModalBody"></div>
+    </div>
+  </div>
+
+  <!-- 3. Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="confirmationModalTitle">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" aria-label="Close Confirmation Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div id="confirmationModalBody"></div>
+    </div>
+  </div>
+
+  <!-- 4. Sales Demo Info Modal -->
+  <div class="modal-backdrop" id="demoInfoModal" role="dialog" aria-modal="true" aria-labelledby="demoInfoModalTitle">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" aria-label="Close Demo Info">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div>
+        <span class="badge" style="background:var(--color-teal-50); color:var(--color-teal-700); font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; display:inline-block; margin-bottom:8px;">Sales Presentation Overview</span>
+        <h3 id="demoInfoModalTitle" style="font-size:1.5rem; font-weight:800; color:var(--color-navy-950); margin-bottom:8px;">About the Aurelia Care Prototype</h3>
+        <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin-bottom:16px;">
+          This demo is engineered to help pitch modern, conversion-focused websites to hospitals, specialist medical clinics, and private healthcare groups that currently lack an effective web presence.
+        </p>
+
+        <div style="background:var(--color-bg-subtle); border-radius:12px; padding:16px; margin-bottom:16px; font-size:13px;">
+          <h4 style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-navy-900); margin-bottom:8px;">Client Pitch Highlights</h4>
+          <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; align-items:center; gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-teal-600);"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Patient Conversion:</strong> Prominent CTAs, unhurried appointment flow, and doctor pre-selection.</span>
+            </li>
+            <li style="display:flex; align-items:center; gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-teal-600);"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Zero-Bloat Performance:</strong> Pure semantic HTML5, CSS design tokens, and vanilla JS with instant load speed.</span>
+            </li>
+            <li style="display:flex; align-items:center; gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-teal-600);"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Accessibility (a11y):</strong> Focus indicators, screen-reader landmarks, keyboard navigation, and reduced-motion support.</span>
+            </li>
+            <li style="display:flex; align-items:center; gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-teal-600);"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Ready for Backend Integration:</strong> Form fields easily connect to any CRM, EHR, WhatsApp API, or email gateway.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:10px;">
+          <a href="admin.html" class="btn btn-outline" style="padding:10px 18px; font-size:13px; text-decoration:none;">Open Staff Portal &rarr;</a>
+          <button type="button" class="btn btn-primary" onclick="closeModal(document.getElementById('demoInfoModal'))" style="padding:10px 24px; font-size:13px;">Return to Website</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>
